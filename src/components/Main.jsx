@@ -83,7 +83,7 @@ function Main() {
 				) : (
 					<div
 						id="result"
-						className="h-[70vh] flex flex-col gap-8 text-lg overflow-scroll"
+						className="h-[70vh] flex flex-col gap-8 text-lg overflow-y-scroll"
 					>
 						<div
 							id="query"
