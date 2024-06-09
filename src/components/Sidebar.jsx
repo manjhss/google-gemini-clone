@@ -19,7 +19,7 @@ function Sidebar() {
 	return (
 		<div
 			id="sidebar"
-			className="h-screen inline-flex p-4 bg-[#1e1f20] flex-col justify-between"
+			className="inline-flex p-4 bg-[#1e1f20] flex-col justify-between"
 		>
 			<div id="top">
 				<div
@@ -61,27 +61,6 @@ function Sidebar() {
 						})}
 					</div>
 				)}
-			</div>
-
-			<div id="bottom" className="mb-3">
-				<div className="tools">
-					<span class="material-symbols-outlined text-xl">help</span>
-					{extended && <p className="text-md">Help</p>}
-				</div>
-
-				<div className="tools">
-					<span class="material-symbols-outlined text-xl">
-						history
-					</span>
-					{extended && <p className="text-md">Activity</p>}
-				</div>
-
-				<div className="tools">
-					<span class="material-symbols-outlined text-xl">
-						settings
-					</span>
-					{extended && <p className="text-md">Settings</p>}
-				</div>
 			</div>
 		</div>
 	);

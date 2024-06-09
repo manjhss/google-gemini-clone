@@ -13,7 +13,7 @@ function Main() {
 	} = useContext(Context);
 
 	return (
-		<main className="w-full h-screen p-4 bg-[#131314] flex flex-col">
+		<main className="w-full p-4 bg-[#131314] flex flex-col">
 			<nav className="px-3 py-1 flex justify-between">
 				<p className="text-xl">Gemini</p>
 
@@ -24,9 +24,9 @@ function Main() {
 				/>
 			</nav>
 
-			<div className="w-[860px] mx-auto flex-1 flex flex-col justify-between">
+			<div className="md:w-[700px] flex-1 lg:w-[900px] mx-auto flex flex-col justify-between">
 				{!showResult ? (
-					<>
+					<div className="space-y-20 h-[74vh]">
 						<div id="greet" className="text-5xl font-medium">
 							<p className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-red-500 to-orange-500 mt-10">
 								Hello, Surendra
@@ -36,7 +36,10 @@ function Main() {
 							</p>
 						</div>
 
-						<div id="cards-ctn" className="grid grid-cols-4 gap-3">
+						<div
+							id="cards-ctn"
+							className="md:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 hidden"
+						>
 							<div className="card">
 								<p>
 									Compare the differences between pickleball
@@ -79,11 +82,11 @@ function Main() {
 								</div>
 							</div>
 						</div>
-					</>
+					</div>
 				) : (
 					<div
 						id="result"
-						className="h-[70vh] flex flex-col gap-8 text-lg overflow-y-scroll no-scrollbar"
+						className="h-[74vh] flex flex-col gap-8 text-lg overflow-y-scroll no-scrollbar"
 					>
 						<div
 							id="query"
@@ -123,8 +126,8 @@ function Main() {
 					</div>
 				)}
 
-				<div id="bottom" className="w-full">
-					<div className="pr-4 flex items-center justify-between bg-gray-500/20 rounded-full">
+				<div id="bottom" className="pt-3 bg-[#131314]">
+					<div className="flex items-center justify-between bg-gray-500/20 rounded-full">
 						<input
 							onChange={(e) => setInput(e.target.value)}
 							value={input}
@@ -132,14 +135,14 @@ function Main() {
 							name="prompt"
 							id="prompt"
 							placeholder="Enter a prompt here"
-							className="text-lg px-6 py-5 focus:outline-none focus-visible:outline-none flex-1 bg-transparent"
+							className="text-lg px-6 py-5 focus:outline-none focus-visible:outline-none flex-1 bg-transparent "
 						/>
 
-						<div>
-							<span class="material-symbols-outlined p-3 inline-flex items-center gap-4 hover:bg-gray-500/40 cursor-pointer rounded-full">
+						<div className="pr-4">
+							<span class="material-symbols-outlined p-3 md:inline-flex items-center gap-4 hover:bg-gray-500/40 cursor-pointer rounded-full hidden">
 								add_photo_alternate
 							</span>
-							<span class="material-symbols-outlined p-3 inline-flex items-center gap-4 hover:bg-gray-500/40 cursor-pointer rounded-full">
+							<span class="material-symbols-outlined p-3 md:inline-flex items-center gap-4 hover:bg-gray-500/40 cursor-pointer rounded-full hidden">
 								mic
 							</span>
 							{input && (
@@ -153,7 +156,10 @@ function Main() {
 						</div>
 					</div>
 
-					<p id="info" className="text-sm text-center mt-3">
+					<p
+						id="info"
+						className="text-sm text-center mt-3 hidden md:block"
+					>
 						Gemini may display inaccurate info, including about
 						people, so double-check its responses.{" "}
 						<span className="underline">
